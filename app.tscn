@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dowgu3wjlidbd"]
+
+[ext_resource type="PackedScene" uid="uid://tb2tv4u43oc8" path="res://Prefabs/ui_manager.tscn" id="1_sjogd"]
+[ext_resource type="PackedScene" uid="uid://sxpmabmoyo4d" path="res://Prefabs/board.tscn" id="2_6uxw1"]
+
+[node name="App" type="Node2D"]
+
+[node name="UI_manager" parent="." instance=ExtResource("1_sjogd")]
+offset_left = 1280.0
+offset_right = 1280.0
+size_flags_horizontal = 8
+
+[node name="Board" parent="." instance=ExtResource("2_6uxw1")]
+
+[connection signal="export" from="UI_manager" to="Board" method="export"]
