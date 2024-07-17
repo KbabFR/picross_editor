@@ -14,10 +14,10 @@ script = ExtResource("1_1qdnt")
 
 [node name="Noir" type="Button" parent="."]
 layout_mode = 0
-offset_left = -210.0
-offset_top = 18.0
-offset_right = -10.0
-offset_bottom = 90.0
+offset_left = -232.0
+offset_top = 57.0
+offset_right = -32.0
+offset_bottom = 129.0
 icon = ExtResource("1_vd263")
 
 [node name="Gomme" type="Button" parent="."]
@@ -29,18 +29,25 @@ offset_bottom = 16.0
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = -95.0
-offset_top = 27.0
-offset_right = -19.0
-offset_bottom = 66.0
+offset_left = -332.0
+offset_top = 19.0
+offset_right = -256.0
+offset_bottom = 58.0
 placeholder_text = "Width"
 
 [node name="Export" type="Button" parent="."]
 layout_mode = 0
-offset_left = -143.0
-offset_top = 222.0
-offset_right = -84.0
-offset_bottom = 253.0
+offset_left = -138.0
+offset_top = 126.0
+offset_right = -79.0
+offset_bottom = 157.0
 text = "Export"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = -281.0
+offset_top = 172.0
+offset_right = -10.0
+offset_bottom = 659.0
 
 [connection signal="pressed" from="Export" to="." method="_on_export_pressed"]

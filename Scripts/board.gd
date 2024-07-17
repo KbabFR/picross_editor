@@ -3,8 +3,8 @@ extends Node2D
 const TILE_PATH = "res://Prefabs/tile.tscn"
 const STEP = 64
 const USER_PATH = "user://"
-var size: Vector2 = Vector2(10, 10)
 var board: Array
+var current_size: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,11 +12,12 @@ func _ready():
 
 
 func spawn_tile():
-	board.resize(size.y)
-	for y in range(size.y):
+	current_size = Global.size
+	board.resize(current_size.y)
+	for y in range(current_size.y):
 		var line: Array
-		line.resize(size.x)
-		for x in range(size.x):
+		line.resize(current_size.x)
+		for x in range(current_size.x):
 			var tile = load(TILE_PATH).instantiate()
 			tile.position = Vector2(STEP * x, STEP * y)
 			line[x] = tile
@@ -31,7 +32,8 @@ func export():
 		for x in range(board[0].size()):
 			line.append(board[y][x].state)
 		export.append(line)
-	generate_file(export)
+	#generate_file(export)
+
 
 func generate_file(nono: Array):
 	#Global.get_name_file()
@@ -42,3 +44,7 @@ func generate_file(nono: Array):
 	var file = FileAccess.open(USER_PATH + String.num_int64(num) + ".txt",FileAccess.WRITE)
 	file.store_var(nono)
 	file.close()
+
+
+func resize():
+	pass
