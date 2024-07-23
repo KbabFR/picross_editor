@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://tb2tv4u43oc8"]
+[gd_scene load_steps=2 format=3 uid="uid://tb2tv4u43oc8"]
 
 [ext_resource type="Script" path="res://Scripts/ui_manager.gd" id="1_1qdnt"]
-[ext_resource type="Texture2D" uid="uid://cxjge84po271y" path="res://Assets/Input.png" id="1_vd263"]
 
 [node name="UI_manager" type="Control"]
 layout_mode = 3
@@ -11,29 +10,6 @@ anchor_right = 1.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 script = ExtResource("1_1qdnt")
-
-[node name="Noir" type="Button" parent="."]
-layout_mode = 0
-offset_left = -232.0
-offset_top = 57.0
-offset_right = -32.0
-offset_bottom = 129.0
-icon = ExtResource("1_vd263")
-
-[node name="Gomme" type="Button" parent="."]
-layout_mode = 0
-offset_left = -34.0
-offset_top = 3.0
-offset_right = -21.0
-offset_bottom = 16.0
-
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = -332.0
-offset_top = 19.0
-offset_right = -256.0
-offset_bottom = 58.0
-placeholder_text = "Width"
 
 [node name="Export" type="Button" parent="."]
 layout_mode = 0
@@ -50,4 +26,37 @@ offset_top = 172.0
 offset_right = -10.0
 offset_bottom = 659.0
 
+[node name="hauteur -" type="Button" parent="."]
+offset_left = -203.0
+offset_top = 69.0
+offset_right = -119.0
+offset_bottom = 114.0
+text = "hauteur -"
+
+[node name="hauteur +" type="Button" parent="."]
+offset_left = -107.0
+offset_top = 71.0
+offset_right = -23.0
+offset_bottom = 116.0
+text = "hauteur +"
+
+[node name="largeur -" type="Button" parent="."]
+offset_left = -198.0
+offset_top = 10.0
+offset_right = -120.0
+offset_bottom = 55.0
+text = "largeur -"
+
+[node name="largeur +" type="Button" parent="."]
+layout_mode = 0
+offset_left = -104.0
+offset_top = 10.0
+offset_right = -26.0
+offset_bottom = 55.0
+text = "largeur +"
+
 [connection signal="pressed" from="Export" to="." method="_on_export_pressed"]
+[connection signal="pressed" from="hauteur -" to="." method="_on_hauteur_down_pressed"]
+[connection signal="pressed" from="hauteur +" to="." method="_on_hauteur_up_pressed"]
+[connection signal="pressed" from="largeur -" to="." method="_on_largeur_down_pressed"]
+[connection signal="pressed" from="largeur +" to="." method="_on_largeur_up_pressed"]

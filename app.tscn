@@ -13,3 +13,5 @@ size_flags_horizontal = 8
 [node name="Board" parent="." instance=ExtResource("2_6uxw1")]
 
 [connection signal="export" from="UI_manager" to="Board" method="export"]
+[connection signal="resizex" from="UI_manager" to="Board" method="resizex"]
+[connection signal="resizey" from="UI_manager" to="Board" method="resizey"]

@@ -46,5 +46,20 @@ func generate_file(nono: Array):
 	file.close()
 
 
-func resize():
-	pass
+func resizex():
+	if Global.size.x > current_size.x:
+		for line in board:
+			line.resize(Global.size.x)
+			for x in range(current_size.x, Global.size.x):
+				line[x] = 0
+	else:
+		for line in board:
+			line.resize(Global.size.x)
+
+func resizey():
+	if Global.size.y > current_size.y:
+		board.resize(Global.size.y)
+		for line in range(current_size.y, Global.size.y):
+			board[line].fill(0)
+	else:
+		board.resize(Global.size.y)

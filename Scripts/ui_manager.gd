@@ -1,6 +1,8 @@
 extends Control
 
 signal export
+signal resizex
+signal resizey
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,3 +16,20 @@ func _process(delta):
 
 func _on_export_pressed():
 	export.emit()
+
+
+func _on_hauteur_up_pressed():
+	Global.size.y += 5
+	resizey.emit()
+
+func _on_hauteur_down_pressed():
+	Global.size.y -= 5
+	resizey.emit()
+
+func _on_largeur_up_pressed():
+	Global.size.x += 5
+	resizex.emit()
+
+func _on_largeur_down_pressed():
+	Global.size.x -= 5
+	resizex.emit()
